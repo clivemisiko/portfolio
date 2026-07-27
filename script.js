@@ -2,13 +2,12 @@ const glow = document.querySelector('.cursor-glow');
 const portrait = document.querySelector('.portrait-frame img');
 if (portrait) {
   const portraitFallback = portrait.nextElementSibling;
+  if (portraitFallback && portraitFallback.classList.contains('portrait-fallback')) portraitFallback.remove();
   portrait.onload = () => {
     portrait.style.display = 'block';
-    if (portraitFallback) portraitFallback.style.display = 'none';
   };
   portrait.onerror = () => {
     portrait.style.display = 'none';
-    if (portraitFallback) portraitFallback.style.display = 'flex';
   };
   portrait.src = 'assets/clive%20passport%20photo.jpg';
   portrait.style.display = 'block';

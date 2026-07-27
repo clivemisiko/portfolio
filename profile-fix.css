@@ -1,2 +1,6 @@
 /* The real profile photo is present; keep the emergency placeholder out of the layout. */
 .portrait-fallback{display:none!important}
+.signal-bottom{left:-100px!important}
+.portrait-label{color:#fff!important}
+.portrait-label{bottom:-46px!important}
+@media(max-width:800px){.signal-bottom{left:0!important}}
