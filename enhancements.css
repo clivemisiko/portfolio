@@ -1,0 +1,54 @@
+/* Enhancements: theme toggle, reveal animations, mobile nav, orbit animation */
+
+/* Light theme — toggled by adding `light-theme` to the body */
+body.light-theme{--ink:#f7f6f4;--ink-soft:#ffffff;--paper:#0a1321;--muted:#64707a;--cyan:#0ea7a3;--lime:#7aa21a;--line:rgba(10,19,33,.06)}
+
+/* Orbit animation */
+.orbit{animation:rotateOrbit 28s linear infinite}
+@keyframes rotateOrbit{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+
+/* Reveal on scroll */
+.reveal{opacity:0;transform:translateY(18px) scale(.995);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.9,.2,1)}
+.reveal.visible{opacity:1;transform:none}
+
+/* Cursor glow smoothing */
+.cursor-glow{transition:transform .18s linear,opacity .25s linear}
+
+/* Portrait float */
+.portrait-frame{animation:floatPortrait 6.6s ease-in-out infinite}
+@keyframes floatPortrait{0%{transform:translateY(0) rotate(3deg)}50%{transform:translateY(-8px) rotate(1.6deg)}100%{transform:translateY(0) rotate(3deg)}}
+
+/* Signal card subtle pop */
+.signal-card{transition:transform .28s cubic-bezier(.2,.9,.2,1),box-shadow .28s}
+.signal-card:hover{transform:translateY(-6px);box-shadow:0 24px 44px rgba(0,0,0,.28)}
+
+/* Button micro-interactions */
+.button, .header-cta{transition:transform .18s ease,box-shadow .18s ease}
+.button:hover, .header-cta:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(2,6,12,.28)}
+
+/* Project card hover emphasis */
+.project-card{will-change:transform,box-shadow}
+.project-card:hover{transform:translateY(-10px) scale(1.01);box-shadow:0 30px 60px rgba(0,0,0,.45)}
+
+/* Staggered reveal helper (JS sets inline transition-delay) */
+.reveal{transition-property:opacity,transform}
+
+/* Reduce motion users */
+@media (prefers-reduced-motion: reduce){
+  .orbit{animation:none !important}
+  .portrait-frame{animation:none !important}
+  .reveal{transition:none !important;transform:none !important;opacity:1 !important}
+  .cursor-glow{transition:none !important}
+}
+
+/* Header actions and mobile nav */
+.header-actions{display:flex;align-items:center;gap:12px}
+.theme-toggle{background:transparent;border:0;color:var(--muted);font-size:16px;cursor:pointer;padding:8px}
+.mobile-nav-toggle{display:none;background:transparent;border:0;color:var(--paper);font-size:20px;cursor:pointer;padding:8px;margin-right:8px}
+
+@media(max-width:800px){
+  .mobile-nav-toggle{display:block}
+  .nav-links{display:none;position:absolute;top:80px;left:16px;right:16px;background:var(--ink-soft);border:1px solid var(--line);padding:14px;flex-direction:column;gap:10px;border-radius:8px}
+  .nav-links.open{display:flex}
+  .nav-links a{padding:8px 6px}
+}
