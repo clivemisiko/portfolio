@@ -1,0 +1,2 @@
+/* The real profile photo is present; keep the emergency placeholder out of the layout. */
+.portrait-fallback{display:none!important}
