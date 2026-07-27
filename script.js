@@ -1,4 +1,6 @@
 const glow = document.querySelector('.cursor-glow');
+const portrait = document.querySelector('.portrait-frame img');
+if (portrait) portrait.src = 'assets/clive%20passport%20photo.jpg';
 let targetX = 0, targetY = 0, currentX = 0, currentY = 0;
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 if (!reducedMotion) {
