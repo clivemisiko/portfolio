@@ -70,7 +70,7 @@ const body = document.body;
 function applyTheme(theme){
   if(theme === 'light') body.classList.add('light-theme'); else body.classList.remove('light-theme');
 }
-const savedTheme = localStorage.getItem('theme') || 'dark';
+const savedTheme = localStorage.getItem('theme') || 'light';
 applyTheme(savedTheme);
 if(themeToggle){
   themeToggle.addEventListener('click', () => {
