@@ -33,7 +33,7 @@ if (!reducedMotion) {
 const projectLinks = {
   hr: { demo: 'https://hr-payroll-vunoh.vercel.app/', source: 'https://github.com/clivemisiko/Python_Projects.git' },
   leave: { demo: 'https://leave-management-system-ochre.vercel.app/' },
-  usafi: { demo: 'https://dependent-trim-cohen-russell.trycloudflare.com/' },
+  usafi: { demo: 'https://usafilink.vercel.app/' },
 };
 document.querySelectorAll('.project-card').forEach((card) => {
   const links = projectLinks[card.dataset.project];
