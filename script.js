@@ -1,17 +1,4 @@
 const glow = document.querySelector('.cursor-glow');
-const portrait = document.querySelector('.portrait-frame img');
-if (portrait) {
-  const portraitFallback = portrait.nextElementSibling;
-  if (portraitFallback && portraitFallback.classList.contains('portrait-fallback')) portraitFallback.remove();
-  portrait.onload = () => {
-    portrait.style.display = 'block';
-  };
-  portrait.onerror = () => {
-    portrait.style.display = 'none';
-  };
-  portrait.src = 'assets/clive%20passport%20photo.jpg';
-  portrait.style.display = 'block';
-}
 let targetX = 0, targetY = 0, currentX = 0, currentY = 0;
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 if (!reducedMotion) {
@@ -57,9 +44,10 @@ filters.forEach((filter) => filter.addEventListener('click', () => {
 
 /* Case studies dialog */
 const caseStudies = {
-  hr: { kicker: '01 / Product build', title: 'HR & Payroll Platform', copy: 'A practical internal platform built around the everyday realities of employee operations — records, leave, payroll, and the need for an audit trail that does not disappear when someone leaves.', points: ['Leave approvals check team coverage and minimum notice periods before progressing.', 'Payroll handles progressive tax brackets, social security deductions, mid-month joiners, and unpaid leave.', 'Soft deactivation keeps historical employee and payroll records intact.', 'Deployed on Vercel with a PostgreSQL / Supabase backend.'], tags: ['Flask', 'PostgreSQL', 'Supabase', 'HTML / CSS / JS'] },
-  leave: { kicker: '02 / Service system', title: 'Leave Management System', copy: 'A web-based workflow that moves leave applications out of paperwork and into a clear, role-aware system for staff and administrators.', points: ['Relational MySQL database for employees, leave balances, and approvals.', 'Role-based authentication for staff and administrators.', 'Automated PDF generation for official leave forms.', 'Responsive interface for desktop and mobile devices.'], tags: ['Python', 'Flask', 'MySQL', 'Responsive UI'] },
-  usafi: { kicker: '03 / Full-stack product', title: 'UsafiLink', copy: 'A two-sided marketplace for connecting customers with exhaust-truck drivers. The product brings mapping, real-time operations, payments, and background jobs into one service.', points: ['Proximity matching across a 50 km radius with live Mapbox vehicle tracking.', 'M-PESA integration with transaction auditing, payment verification, and dispute handling.', 'Celery + Redis architecture for notifications and scheduled jobs.', 'JWT + Clerk OAuth, TOTP 2FA, role-based access, and automated CI/CD.'], tags: ['Django', 'React / Vite', 'Mapbox GL', 'Celery / Redis'] },
+  report: { kicker: '01 / AI & data', title: 'Weekly Market Report Generator', copy: "An investment firm's analysts wrote their weekly market report by hand from CBK, NSE and REIT data. This tool drafts it for them, and checks every figure in the draft against its source before an analyst signs off. I was the sole developer.", points: ['An LLM drafts the report sections from the week\'s CBK, NSE and REIT data.', 'Every figure in the draft is checked against its source value before review.', 'Analysts read the draft alongside the checks in a FastAPI and Next.js review app, then sign off.', 'Containerised with Docker Compose and covered by 700+ automated tests.', 'Client work, so the code is private. Happy to walk through it in an interview.'], tags: ['Python', 'LLMs', 'FastAPI', 'Next.js', 'Docker Compose'] },
+  hr: { kicker: '02 / Product build', title: 'HR & Payroll Platform', copy: 'An internal platform for employee records, leave and payroll, built as a technical assessment for Vunoh Global. It keeps an audit trail that does not disappear when someone leaves.', points: ['Leave approvals check team coverage and minimum notice before they go through, and escalate automatically if unanswered after 48 hours.', 'Payroll applies progressive tax brackets and pro-rates pay for mid-month joiners and unpaid leave.', 'Records are deactivated, not deleted, so payroll history survives an exit.', 'Deployed on Vercel with a PostgreSQL / Supabase backend.'], tags: ['Flask', 'PostgreSQL', 'Supabase', 'HTML / CSS / JS'] },
+  usafi: { kicker: '03 / Full-stack product', title: 'UsafiLink', copy: 'A two-sided marketplace that matches customers with exhauster truck drivers. It brings mapping, live operations, payments and background jobs into one service.', points: ['Matches customers with drivers within 50 km, with live GPS tracking on a Mapbox map.', 'M-PESA payments with transaction auditing, payment verification and dispute resolution, plus a cash fallback with admin override.', 'Celery and Redis background jobs for SMS and email notifications.', 'JWT authentication with two-factor login. Deployed on Vercel.'], tags: ['Django', 'React', 'MySQL', 'Celery / Redis', 'Mapbox'] },
+  leave: { kicker: '04 / Service system', title: 'Leave Management System', copy: 'A prototype for the Ministry of Information, Communications and the Digital Economy that replaces a paper-based leave process with a web system for staff and administrators.', points: ['MySQL schema for employee records, leave balances and approval history.', 'Separate staff and administrator access.', 'Generates official leave forms as PDFs.', 'Works on desktop and mobile.'], tags: ['Python', 'Flask', 'MySQL', 'Responsive UI'] },
 };
 const dialog = document.querySelector('#case-dialog');
 const content = document.querySelector('.dialog-content');

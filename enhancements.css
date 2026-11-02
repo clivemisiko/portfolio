@@ -4,3 +4,25 @@ body{background:var(--ink);color:var(--paper);line-height:1.6;transition:backgro
 @keyframes floatPortrait{0%,100%{transform:translateY(0)!important}50%{transform:translateY(-8px)!important}}
 @media(max-width:800px){.site-header{width:100%;padding:15px 20px}.mobile-nav-toggle{display:block}.nav-links{position:absolute;top:100%;left:0;right:0;display:none;flex-direction:column;align-items:center;gap:15px;padding:22px;background:var(--ink);box-shadow:0 8px 15px rgba(0,0,0,.1)}.nav-links.open{display:flex}.header-cta{display:none}.hero{grid-template-columns:1fr;text-align:center;padding-top:55px}.hero-intro{margin-inline:auto}.hero-actions{justify-content:center}.hero-meta{justify-content:center}.hero-visual{height:420px}.portrait-frame{width:300px;height:300px}.signal-top{right:0}.signal-bottom{left:0}.intro-grid,.experience-grid{grid-template-columns:1fr;gap:40px}.intro-grid{text-align:center}.experience-section>.section-kicker{justify-content:center}.contact-card{padding:45px 30px}.contact-card .section-kicker{justify-content:flex-start}.contact-card:after{font-size:110px;right:0}.site-footer{display:block;line-height:2.3}}
 @media(max-width:450px){.hero h1{font-size:42px}.hero-intro{font-size:1rem}.hero-actions{flex-direction:column}.hero-actions .button{width:100%}.portrait-frame{width:260px;height:260px}.project-grid{grid-template-columns:1fr}.filters{overflow:auto;justify-content:flex-start}.filter{white-space:nowrap}}
+
+/* Report generator card art */
+.report-art{background:#14262f;display:grid;place-items:center}
+.report-art .mini-window{width:78%}
+.report-art .mini-stat small{margin-bottom:16px}
+.report-lines{display:flex;flex-direction:column;gap:12px}
+.report-line{display:flex;align-items:center;gap:12px}
+.report-line b{display:block;height:5px;background:#284054}
+.report-line em{margin-left:auto;font:8px var(--mono);font-style:normal;color:var(--lime);white-space:nowrap}
+.report-status{display:flex;align-items:center;gap:8px;margin-top:20px;padding-top:14px;border-top:1px solid var(--line);font:8px var(--mono);color:var(--cyan);text-transform:uppercase;letter-spacing:.08em}
+.report-status .status-dot{width:6px;height:6px}
+.rates-panel table.rt .ref{font-size:13.5px}
+@media(max-width:600px){.rates-panel .addons{grid-template-columns:1fr}.rates-panel table.rt td.tier{white-space:normal}}
+.filters{flex-wrap:wrap}
+@media(max-width:800px){.hero{overflow:hidden}}
+.project-card.wide{grid-column:1/-1;display:grid;grid-template-columns:1.1fr .9fr;align-items:center}
+.project-card.wide .project-top{grid-column:1/-1}
+.project-card.wide .project-art{height:300px;margin-bottom:20px}
+.project-card.wide .project-info h3{font-size:clamp(24px,2.4vw,32px)}
+@media(max-width:800px){.project-card.wide{display:block}.project-card.wide .project-art{height:260px;margin-bottom:0}}
+.contact-card h2 em{color:inherit;opacity:.62}
+@media(max-width:800px){.rates-panel .ref{display:table-cell}.rates-panel table.rt td.tier{white-space:nowrap;padding-right:14px}.rates-panel .term-body{padding:22px 4px 16px}}
